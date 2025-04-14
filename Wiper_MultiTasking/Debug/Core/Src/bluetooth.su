@@ -1,0 +1,4 @@
+../Core/Src/bluetooth.c:26:6:Bluetooth_Init	8	static
+../Core/Src/bluetooth.c:31:6:Bluetooth_RxCallback	16	static
+../Core/Src/bluetooth.c:46:6:Parse_Command	160	static
+../Core/Src/bluetooth.c:119:10:Bluetooth_GetSpeed	4	static

@@ -1,0 +1,12 @@
+../Core/Src/mpu6050.c:22:9:MPU6050_Init	2
+../Core/Src/mpu6050.c:31:6:MPU6050_Read_Accel	2
+../Core/Src/mpu6050.c:46:6:MPU6050_Read_Gyro	2
+../Core/Src/mpu6050.c:61:9:MPU6050_GetAccelX	1
+../Core/Src/mpu6050.c:62:9:MPU6050_GetAccelY	1
+../Core/Src/mpu6050.c:63:9:MPU6050_GetAccelZ	1
+../Core/Src/mpu6050.c:65:9:MPU6050_GetGyroX	1
+../Core/Src/mpu6050.c:66:9:MPU6050_GetGyroY	1
+../Core/Src/mpu6050.c:67:9:MPU6050_GetGyroZ	1
+../Core/Src/mpu6050.c:69:7:MPU6050_CalcPitch	4
+../Core/Src/mpu6050.c:81:7:MPU6050_CalcRoll	3
+../Core/Src/mpu6050.c:91:7:MPU6050_CalcYaw	3
