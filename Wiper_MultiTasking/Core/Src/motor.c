@@ -4,10 +4,10 @@
 #include "cmsis_os.h"
 
 // 핀 매핑
-#define IN1_PORT GPIOA
-#define IN1_PIN  GPIO_PIN_0
-#define IN2_PORT GPIOA
-#define IN2_PIN  GPIO_PIN_1
+#define IN1_PORT GPIOC // GPIOA 0 (기존)
+#define IN1_PIN  GPIO_PIN_4
+#define IN2_PORT GPIOC // GPIOA 1 (기존)
+#define IN2_PIN  GPIO_PIN_5
 #define IN3_PORT GPIOA
 #define IN3_PIN  GPIO_PIN_4
 #define IN4_PORT GPIOB

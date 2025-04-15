@@ -17,12 +17,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "sensors.h"
 #include "mpu6050.h"
 #include "motor.h"
 #include "queue.h"
 #include "bluetooth.h"
 #include "ultrasonic.h"  // 초음파 헤더 추가
+#include "cds.h"
+#include "dht.h"
 
 extern TIM_HandleTypeDef htim4;   // TIM4 핸들
 extern UART_HandleTypeDef huart2; // UART2 핸들
@@ -45,7 +46,6 @@ extern uint8_t current_motor_cmd;
 /* USER CODE BEGIN Variables */
 // ---- 기존 센서/모터 관련 태스크 핸들 ----
 osThreadId_t mpuTaskHandle;
-// osThreadId_t dht11TaskHandle;
 osThreadId_t cdsTaskHandle;
 osMessageQueueId_t uartQueueHandle; // 센서 로그 전용
 QueueHandle_t motorQueueHandle;     // 모터 명령 큐
@@ -57,7 +57,6 @@ osThreadId_t ultrasonicTask3Handle;
 /* USER CODE END Variables */
 
 /* Definitions for defaultTask */
-// (자동생성된 코드에 의해 생성되는 부분 - 여기선 생략)
 
 // ---- 태스크 속성들 ----
 /* USER CODE BEGIN RTOS_THREADS */
@@ -67,13 +66,6 @@ const osThreadAttr_t mpuTask_attributes = {
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-
-// DHT11 태스크 속성 (필요시 사용)
-// const osThreadAttr_t dht11Task_attributes = {
-//   .name = "dht11Task",
-//   .stack_size = 512 * 4,
-//   .priority = (osPriority_t) osPriorityNormal,
-// };
 
 /* CDS 태스크 속성 */
 const osThreadAttr_t cdsTask_attributes = {
@@ -122,7 +114,6 @@ void MX_FREERTOS_Init(void);
 
 /* USER CODE BEGIN FunctionPrototypes */
 void StartMPUTask(void *argument);
-//void StartDHT11Task(void *argument);
 void StartCDSTask(void *argument);
 void StartUARTTask(void *argument);
 void StartMotorTask(void *argument);
@@ -137,7 +128,6 @@ void SensorLogPrinter(const char* msg)
 /* USER CODE END FunctionPrototypes */
 
 /* Function implementing the defaultTask thread. */
-/* (자동생성된 코드 있을 수 있음, 여기선 생략) */
 
 /**
   * @brief  FreeRTOS Initialization
@@ -146,9 +136,6 @@ void SensorLogPrinter(const char* msg)
 void MX_FREERTOS_Init(void)
 {
   /* USER CODE BEGIN init */
-  // ---- 센서 로그 콜백 설정 + 센서 초기화 ----
-  SetSensorLogCallback(SensorLogPrinter);
-  Sensors_Init();
 
   // ---- MPU6050 초기화 ----
   if (MPU6050_Init())
@@ -172,9 +159,6 @@ void MX_FREERTOS_Init(void)
   // ---- 태스크 생성들 ----
   // MPU 태스크
   mpuTaskHandle = osThreadNew(StartMPUTask, NULL, &mpuTask_attributes);
-
-  // DHT11 태스크 (필요하면 주석 해제)
-  // dht11TaskHandle = osThreadNew(StartDHT11Task, NULL, &dht11Task_attributes);
 
   // CDS 태스크
   cdsTaskHandle = osThreadNew(StartCDSTask, NULL, &cdsTask_attributes);
@@ -231,30 +215,6 @@ void StartMPUTask(void *argument)
     osDelay(2000);
   }
 }
-
-/* USER CODE BEGIN Header_StartDHT11Task */
-// DHT11 태스크가 필요하다면 참고:
-/*
-void StartDHT11Task(void *argument)
-{
-  uint8_t temp = 0, humi = 0;
-  for(;;)
-  {
-    SensorMessage_t msg_out;
-    uint8_t ok = ReadDHT11(&temp, &humi);
-    if (ok)
-      snprintf(msg_out.message, sizeof(msg_out.message),
-               "[DHT11] Temp: %d°C, Humi: %d%%\r\n", temp, humi);
-    else
-      snprintf(msg_out.message, sizeof(msg_out.message),
-               "[DHT11] Read Fail\r\n");
-
-    osMessageQueuePut(uartQueueHandle, &msg_out, 0, 0);
-    osDelay(2000);
-  }
-}
-*/
-/* USER CODE END Header_StartDHT11Task */
 
 /* USER CODE BEGIN Header_StartCDSTask */
 /**
