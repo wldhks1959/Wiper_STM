@@ -64,8 +64,13 @@ all: main-build
 main-build: Wiper.elf secondary-outputs
 
 # Tool invocations
+<<<<<<< HEAD
+Wiper.elf Wiper.map: $(OBJS) $(USER_OBJS) C:\Users\dlwns\git\Wiper_STM\Wiper_MultiTasking\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Wiper.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\dlwns\git\Wiper_STM\Wiper_MultiTasking\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Wiper.map" -Wl,--gc-sections -static -u _printf_float -ffloat-store --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+=======
 Wiper.elf Wiper.map: $(OBJS) $(USER_OBJS) C:\Users\gg065\git\repository\Wiper_MultiTasking\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-gcc -o "Wiper.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\gg065\git\repository\Wiper_MultiTasking\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Wiper.map" -Wl,--gc-sections -static -u _printf_float -ffloat-store --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+>>>>>>> refs/remotes/origin/master
 	@echo 'Finished building target: $@'
 	@echo ' '
 

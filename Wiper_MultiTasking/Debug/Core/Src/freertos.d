@@ -47,8 +47,12 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Core/Inc/mpu6050.h ../Core/Inc/motor.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+<<<<<<< HEAD
+ ../Core/Inc/bluetooth.h ../Core/Inc/ultrasonic.h ../Core/Inc/main.h
+=======
  ../Core/Inc/bluetooth.h ../Core/Inc/ultrasonic.h ../Core/Inc/cds.h \
  ../Core/Inc/dht.h
+>>>>>>> refs/remotes/origin/master
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -101,5 +105,9 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Core/Inc/bluetooth.h:
 ../Core/Inc/ultrasonic.h:
+<<<<<<< HEAD
+../Core/Inc/main.h:
+=======
 ../Core/Inc/cds.h:
 ../Core/Inc/dht.h:
+>>>>>>> refs/remotes/origin/master
