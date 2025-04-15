@@ -1,0 +1,6 @@
+../Core/Src/dht.c:22:6:SetDHTLogCallback	16	static
+../Core/Src/dht.c:29:13:DHT11_SetPinOutput	32	static
+../Core/Src/dht.c:39:13:DHT11_SetPinInput	32	static
+../Core/Src/dht.c:48:16:DHT11_WaitForPinState	24	static
+../Core/Src/dht.c:59:6:delay_us	24	static
+../Core/Src/dht.c:65:9:ReadDHT11	40	static
