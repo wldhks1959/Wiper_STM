@@ -1,6 +1,6 @@
-../Core/Src/freertos.c:131:6:SensorLogPrinter	144	static
-../Core/Src/freertos.c:146:6:MX_FREERTOS_Init	8	static
-../Core/Src/freertos.c:202:6:StartMPUTask	640	static
-../Core/Src/freertos.c:266:6:StartCDSTask	536	static
-../Core/Src/freertos.c:288:6:StartUARTTask	528	static
-../Core/Src/freertos.c:310:6:StartMotorTask	24	static
+../Core/Src/freertos.c:122:6:SensorLogPrinter	144	static
+../Core/Src/freertos.c:136:6:MX_FREERTOS_Init	8	static
+../Core/Src/freertos.c:186:6:StartMPUTask	640	static
+../Core/Src/freertos.c:226:6:StartCDSTask	536	static
+../Core/Src/freertos.c:248:6:StartUARTTask	528	static
+../Core/Src/freertos.c:270:6:StartMotorTask	24	static
