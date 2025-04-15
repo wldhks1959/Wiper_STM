@@ -4,3 +4,6 @@
 ../Core/Src/freertos.c:266:6:StartCDSTask	536	static
 ../Core/Src/freertos.c:288:6:StartUARTTask	528	static
 ../Core/Src/freertos.c:310:6:StartMotorTask	24	static
+../Core/Src/freertos.c:334:6:UltrasonicTask1	88	static
+../Core/Src/freertos.c:345:6:UltrasonicTask2	88	static
+../Core/Src/freertos.c:356:6:UltrasonicTask3	88	static

@@ -329,6 +329,41 @@ void StartMotorTask(void *argument)
     }
   }
 }
+/* USER CODE BEGIN 1 */
+// 초음파 센서 테스크
+void UltrasonicTask1(void *argument)
+{
+    char msg[64];
+    for (;;) {
+        uint32_t d = read_ultrasonic_distance_cm(GPIOC, GPIO_PIN_7, GPIOC, GPIO_PIN_6);
+        snprintf(msg, sizeof(msg), "Sensor1: %lu cm\r\n", d);
+        HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+        osDelay(1000);
+    }
+}
 
+void UltrasonicTask2(void *argument)
+{
+    char msg[64];
+    for (;;) {
+        uint32_t d = read_ultrasonic_distance_cm(GPIOB, GPIO_PIN_0, GPIOC, GPIO_PIN_8);
+        snprintf(msg, sizeof(msg), "Sensor2: %lu cm\r\n", d);
+        HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+        osDelay(1000);
+    }
+}
+
+void UltrasonicTask3(void *argument)
+{
+    char msg[64];
+    for (;;) {
+        uint32_t d = read_ultrasonic_distance_cm(GPIOC, GPIO_PIN_9, GPIOB, GPIO_PIN_2);
+        snprintf(msg, sizeof(msg), "Sensor3: %lu cm\r\n", d);
+        HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+        osDelay(1000);
+    }
+}
+
+/* USER CODE END 1 */
 /* USER CODE BEGIN Application */
 /* USER CODE END Application */
