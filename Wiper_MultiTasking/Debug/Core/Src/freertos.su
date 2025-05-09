@@ -1,6 +1,0 @@
-../Core/Src/freertos.c:123:6:SensorLogPrinter	144	static
-../Core/Src/freertos.c:137:6:MX_FREERTOS_Init	8	static
-../Core/Src/freertos.c:187:6:StartMPUTask	640	static
-../Core/Src/freertos.c:227:6:StartCDSTask	536	static
-../Core/Src/freertos.c:249:6:StartUARTTask	528	static
-../Core/Src/freertos.c:271:6:StartMotorTask	24	static

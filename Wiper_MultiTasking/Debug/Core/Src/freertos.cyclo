@@ -1,6 +1,0 @@
-../Core/Src/freertos.c:123:6:SensorLogPrinter	1
-../Core/Src/freertos.c:137:6:MX_FREERTOS_Init	2
-../Core/Src/freertos.c:187:6:StartMPUTask	1
-../Core/Src/freertos.c:227:6:StartCDSTask	1
-../Core/Src/freertos.c:249:6:StartUARTTask	2
-../Core/Src/freertos.c:271:6:StartMotorTask	7
