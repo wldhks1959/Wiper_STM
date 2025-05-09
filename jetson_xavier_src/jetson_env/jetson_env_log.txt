@@ -1,0 +1,24 @@
+[OS & JetPack Info]
+JetPack Version   : JetPack 5.1.2
+OS Version        : # R35 (release), REVISION: 6.0, GCID: 37391689, BOARD: t186ref, EABI: aarch64, DATE: Wed Aug 28 09:12:27 UTC 2024
+Ubuntu Version    : Ubuntu 20.04.6 LTS
+L4T Version       : 35.6.0
+
+[Python & PyTorch]
+Python Version    : 3.8.10
+PyTorch Version   : 2.1.0a0+41361538.nv23.06
+TorchVision Version: 0.16.0
+
+[CUDA & cuDNN]
+CUDA Version      : 11.4,
+cuDNN Version     : 8.6.0
+
+📷 [OpenCV]
+OpenCV Version    : 4.11.0
+
+[TensorRT]
+TensorRT Version  : 8.5.2.2-1+cuda11.4
+TensorRT Available: True
+
+[GPU Status Snapshot]
+05-07-2025 19:35:42 RAM 3164/6833MB (lfb 9x4MB) SWAP 1704/3417MB (cached 4MB) CPU [2%@1420,1%@1420,0%@1420,2%@1420,2%@1420,1%@1420] EMC_FREQ 0% GR3D_FREQ 0% AUX@45C CPU@45.5C thermal@44.65C AO@44.5C GPU@44C PMIC@50C

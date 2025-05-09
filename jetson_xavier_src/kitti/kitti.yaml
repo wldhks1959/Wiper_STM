@@ -1,0 +1,5 @@
+train: /home/wiper/jiwan/yolov5/datasets/KITTI/kitti_yolo/images/train
+val: /home/wiper/jiwan/yolov5/datasets/KITTI/kitti_yolo/images/val
+
+nc: 4
+names: ['Car', 'Pedestrian', 'Tram', 'Misc']
